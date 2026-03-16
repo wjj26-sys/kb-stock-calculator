@@ -1,0 +1,655 @@
+@font-face {
+  font-family: "Pretendard";
+  src: url("./fonts/Pretendard/Pretendard-Regular.otf") format("opentype");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Pretendard";
+  src: url("./fonts/Pretendard/Pretendard-Medium.otf") format("opentype");
+  font-weight: 500;
+}
+@font-face {
+  font-family: "Pretendard";
+  src: url("./fonts/Pretendard/Pretendard-Bold.otf") format("opentype");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Spoqa";
+  src: url("./fonts/SpoqaHanSansNeo/SpoqaHanSansNeo-Regular.otf") format("opentype");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Spoqa";
+  src: url("./fonts/SpoqaHanSansNeo/SpoqaHanSansNeo-Medium.otf") format("opentype");
+  font-weight: 500;
+}
+@font-face {
+  font-family: "Spoqa";
+  src: url("./fonts/SpoqaHanSansNeo/SpoqaHanSansNeo-Bold.otf") format("opentype");
+  font-weight: 700;
+}
+
+/* 종합위탁 숫자 전용 */
+@font-face {
+  font-family: "PTSans";
+  src: url("./fonts/PTSans/PTSans-Regular.ttf") format("truetype");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "PTSans";
+  src: url("./fonts/PTSans/PTSans-Bold.ttf") format("truetype");
+  font-weight: 400;
+}
+
+/* 모든 한글 전용 */
+@font-face {
+  font-family: "NanumSquare";
+  src: url("./fonts/NanumSquareOTF/NanumSquareOTF_acL.otf") format("opentype");
+  font-weight: 300;
+}
+@font-face {
+  font-family: "NanumSquare";
+  src: url("./fonts/NanumSquareOTF/NanumSquareOTF_acR.otf") format("opentype");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "NanumSquare";
+  src: url("./fonts/NanumSquareOTF/NanumSquareOTF_acB.otf") format("opentype");
+  font-weight: 700;
+}
+
+:root {
+  --phone-w: 591px;
+  --phone-h: 1159px;
+
+  --panel-w: 360px;
+  --bg: #d8dde3;
+  --panel-bg: #ffffff;
+  --line: #d7dde5;
+  --text: #4A4C51;
+  --muted: #66707b;
+  --up: #B70F3B;
+  --down: #4362C9;
+
+  --card-left: 15px;
+  --card-width: 560.5px;
+
+  --shadow-main: 0 18px 40px rgba(0, 0, 0, 0.16);
+  --shadow-btn: 0 10px 20px rgba(0, 0, 0, 0.18), 0 2px 5px rgba(0, 0, 0, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "NanumSquare", sans-serif;
+}
+
+body {
+  padding: 28px;
+}
+
+/* 종합위탁 번호 숫자 */
+.account-number {
+  font-family: "PTSans", sans-serif;
+  font-variant-numeric: tabular-nums;
+  font-weight: 400;
+  font-size: 28px;
+}
+
+/* 종합위탁 이름 */
+.account-name {
+  font-family: "NanumSquare", sans-serif;
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: -0.2px;
+  margin-left: 5px;
+  position: relative;
+  top: -3px;
+}
+
+.app-wrap {
+  width: 100%;
+  max-width: 1420px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: var(--panel-w) 1fr;
+  gap: 28px;
+  align-items: start;
+}
+
+.side-panel h1 {
+  margin: 0 0 8px;
+  font-size: 22px;
+  font-weight: 700;
+  font-family: "NanumSquare", sans-serif;
+}
+
+.sub {
+  margin: 0 0 18px;
+  color: var(--muted);
+  line-height: 1.5;
+  font-size: 14px;
+  font-family: "NanumSquare", sans-serif;
+}
+
+.panel-box {
+  background: var(--panel-bg);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 16px;
+  margin-bottom: 14px;
+}
+
+.panel-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.panel-box h2 {
+  margin: 0 0 12px;
+  font-size: 16px;
+  font-weight: 700;
+  font-family: "NanumSquare", sans-serif;
+}
+
+label {
+  display: block;
+  font-size: 12px;
+  color: var(--muted);
+  margin: 0 0 6px;
+  font-family: "NanumSquare", sans-serif;
+}
+
+input {
+  width: 100%;
+  height: 38px;
+  border: 1px solid #cfd7e0;
+  border-radius: 12px;
+  background: #fff;
+  padding: 0 12px;
+  font-size: 14px;
+  color: var(--text);
+  margin-bottom: 10px;
+  outline: none;
+  font-family: "NanumSquare", sans-serif;
+}
+
+input:focus {
+  border-color: #4362C9;
+  box-shadow: 0 0 0 3px rgba(47, 93, 184, 0.08);
+}
+
+.num-input {
+  font-family: "Spoqa", "NanumSquare", sans-serif;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.btn-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 6px;
+}
+
+.btn {
+  height: 38px;
+  border: 0;
+  border-radius: 12px;
+  padding: 0 14px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: "NanumSquare", sans-serif;
+}
+
+.btn-dark {
+  background: #4A4C51;
+  color: #fff;
+}
+
+.btn-light {
+  background: #eef2f7;
+  color: #4A4C51;
+}
+
+.card-input-box {
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: #fafbfc;
+  padding: 12px;
+  margin-bottom: 10px;
+}
+
+.card-input-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.card-input-title {
+  font-size: 15px;
+  font-weight: 700;
+  font-family: "NanumSquare", sans-serif;
+}
+
+.delete-card-btn {
+  border: 1px solid #ffd5db;
+  background: #fff1f4;
+  color: #B70F3B;
+  border-radius: 10px;
+  padding: 8px 12px;
+  font-size: 13px;
+  cursor: pointer;
+  font-family: "NanumSquare", sans-serif;
+}
+
+.guide-box ul {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--muted);
+  line-height: 1.7;
+  font-size: 13px;
+  font-family: "NanumSquare", sans-serif;
+}
+
+.preview-area {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.phone {
+  position: relative;
+  width: var(--phone-w);
+  height: var(--phone-h);
+  border-radius: 24px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: var(--shadow-main);
+}
+
+.layer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  object-fit: cover;
+  user-select: none;
+  -webkit-user-drag: none;
+  pointer-events: none;
+}
+
+.white-bg {
+  height: 100%;
+  z-index: 1;
+}
+
+.top-fixed {
+  position: absolute;
+  top: 0px;
+  left: 0;
+  width: 100%;
+  height: auto;
+  z-index: 4;
+  pointer-events: none;
+}
+
+.menu-frame {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: auto;
+  bottom: 0;
+  width: 100%;
+  height: 75.6px;
+  object-fit: fill;
+  z-index: 8;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* 상단 텍스트 */
+.top-text-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.top-text {
+  position: absolute;
+  white-space: nowrap;
+  color: #313133;
+  font-weight: 400;
+  display: block;
+  font-family: "NanumSquare", sans-serif;
+  letter-spacing: -0.2px;
+}
+
+.num-text {
+  font-family: "Spoqa", "NanumSquare", sans-serif;
+  letter-spacing: -0.2px;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+/* 종합위탁 */
+.top-account {
+  left: 116px;
+  top: 163px;
+  font-size: 24px;
+  font-weight: 400;
+  font-family: "NanumSquare", sans-serif;
+}
+
+/* 상단 숫자들: 자릿수 늘어나면 왼쪽으로만 증가 */
+.top-asset {
+  position: absolute;
+  right: 146px;
+  top: 265px;
+  width: 180px;
+  font-size: 19px;
+  font-weight: 600;
+  text-align: right;
+}
+
+.top-asset-rate {
+  position: absolute;
+  right: 82px;
+  top: 268px;
+  width: 66px;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: right;
+}
+
+.top-total-pnl {
+  position: absolute;
+  right: 302px;
+  top: 316px;
+  width: 170px;
+  font-size: 19px;
+  font-weight: 600;
+  text-align: right;
+}
+
+.top-total-eval {
+  position: absolute;
+  right: 38px;
+  top: 316px;
+  width: 160px;
+  font-size: 19px;
+  font-weight: 600;
+  text-align: right;
+}
+
+.top-d2 {
+  position: absolute;
+  right: 301px;
+  top: 362px;
+  width: 170px;
+  font-size: 19px;
+  font-weight: 600;
+  text-align: right;
+}
+
+.top-buy {
+  position: absolute;
+  right: 38px;
+  top: 362px;
+  width: 160px;
+  font-size: 19px;
+  font-weight: 600;
+  text-align: right;
+}
+
+.top-realized {
+  position: absolute;
+  right: 38px;
+  top: 397px;
+  width: 160px;
+  font-size: 19px;
+  font-weight: 600;
+  text-align: right;
+}
+
+/* 카드 레이어 전체 드래그 영역 */
+.card-viewport {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 500px;
+  bottom: 80px;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.card-track {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  cursor: grab;
+  touch-action: none;
+  will-change: transform;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-user-drag: none;
+}
+
+.card-track.dragging {
+  cursor: grabbing;
+}
+
+.stock-card {
+  position: relative;
+  width: var(--card-width);
+  margin-left: var(--card-left);
+  margin-bottom: 14px;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.card-bg {
+  display: block;
+  width: 100%;
+  height: auto;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-user-drag: none;
+}
+
+.card-text-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.card-text {
+  position: absolute;
+  white-space: nowrap;
+  color: var(--text);
+  font-family: "NanumSquare", sans-serif;
+}
+
+/* 카드 종목명 */
+.card-name {
+  left: 22px;
+  top: 26px;
+  font-size: 24px;
+  font-weight: 600;
+  font-family: "NanumSquare", sans-serif;
+}
+
+/* 카드 현금/화살표 숨김 유지 */
+.card-cash-type {
+  display: none !important;
+}
+
+/* 카드 숫자들: 자릿수 늘어나면 왼쪽으로만 증가 */
+.card-pnl {
+  position: absolute;
+  right: 292px;
+  top: 77px;
+  width: 140px;
+  font-size: 21px;
+  font-weight: 500;
+  font-family: "Spoqa", "NanumSquare", sans-serif;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.card-rate {
+  position: absolute;
+  right: 292px;
+  top: 111px;
+  width: 140px;
+  font-size: 21px;
+  font-weight: 500;
+  font-family: "Spoqa", "NanumSquare", sans-serif;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.card-qty {
+  position: absolute;
+  right: 24px;
+  top: 77px;
+  width: 90px;
+  font-size: 22px;
+  font-weight: 500;
+  font-family: "Spoqa", "NanumSquare", sans-serif;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.card-avg {
+  position: absolute;
+  right: 24px;
+  top: 110px;
+  width: 120px;
+  font-size: 22px;
+  font-weight: 500;
+  font-family: "Spoqa", "NanumSquare", sans-serif;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+/* 해외 버튼 전체 위치 */
+.overseas-btn-wrap {
+  position: absolute;
+  right: 19px;
+  bottom: 119px;
+  z-index: 7;
+  width: 132px;
+  height: 72px;
+  pointer-events: none;
+}
+
+.overseas-btn-img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 132px;
+  height: auto;
+  display: block;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* 메뉴 이동 이미지 */
+.menu-move-viewport {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 80px;
+  overflow: hidden;
+  z-index: 6;
+}
+
+.menu-move-image {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 75.6px;
+  width: auto;
+  max-width: none;
+  cursor: grab;
+  touch-action: pan-x;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-user-drag: none;
+}
+
+.menu-move-image.dragging {
+  cursor: grabbing;
+}
+
+/* 색상 */
+.up {
+  color: var(--up) !important;
+}
+
+.down {
+  color: var(--down) !important;
+}
+
+.flat {
+  color: var(--text) !important;
+}
+
+/* 드래그/캡처 공통 선택 방지 */
+body.capturing *,
+body.dragging-ui,
+body.dragging-ui * {
+  user-select: none !important;
+  -webkit-user-select: none !important;
+  -webkit-user-drag: none !important;
+}
+
+@media (max-width: 1200px) {
+  .app-wrap {
+    grid-template-columns: 1fr;
+  }
+
+  .preview-area {
+    justify-content: flex-start;
+  }
+}
+
+.num {
+  font-family: "PTSans", sans-serif;
+  font-variant-numeric: tabular-nums;
+  font-weight: 400;
+}
+
+.top-text,
+.card-text {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: geometricPrecision;
+}
+
+body {
+  font-family: "Pretendard", sans-serif;
+}
